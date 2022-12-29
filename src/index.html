@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 网页三要素： for SOE优化 -->
-    <title>PC front-end Project</title>
-    <meta name="keywords" content="anqi">
-    <meta name="description" content="this is my personal front end project practice">
+    <title>PC project</title>
+    <meta name="keywords" content="Anqi">
+    <meta name="description" content="This is my first PC proejct">
+    <!-- 注意link的顺序，下面会覆盖上面 -->
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+    
 </head>
 <body>
     <!-- header start -->
     <header class="header">
         <!-- site-topbar start -->
         <div class="site-topbar">
-            <div class="container">
+            <div class="container clearfix">
                 <nav class="topbar-nav">
                     <ul>
                         <li><a href="#">手机商城</a></li>
@@ -30,19 +32,19 @@
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            <img src="./images/shoujizhuti_08tongxunlu.png" alt="tongxunlu" width="16" height="16">
+                                            <img src="./images/shoujizhuti_08tongxunlu.png" alt="通讯录" width="16" height="16">
                                             通讯录
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="./images/shoujizhuti_05duanxin.png" alt="duanxin" width="16" height="16">
+                                            <img src="./images/shoujizhuti_05duanxin.png" alt="短信" width="16" height="16">
                                             短信
-                                            </a>
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="./images/shoujizhuti_03xiangce.png" alt="xiangce" width="16" height="16">
+                                            <img src="./images/shoujizhuti_03xiangce.png" alt="云相册" width="16" height="16">
                                             云相册
                                         </a>
                                     </li>
@@ -54,10 +56,11 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="./images/shoujizhuti_15bianqian.png" alt="便签" width="16" height="16">
-                                            笔记（便签）
+                                            <img src="./images/shoujizhuti_15bianqian.png" alt="笔记" width="16" height="16">
+                                            笔记（标签）
                                         </a>
                                     </li>
+                                    
                                 </ul>
                             </div>
                         </li>
@@ -70,46 +73,42 @@
                         <li class="submenu active">
                             <a href="#">下载app</a>
                             <div class="appcode">
-                                <img src="./images/QRcode.png" alt="QRcode" width="87" height="87">
+                                <img src="./images/QRcode.png" alt="二维码" width="87" height="87">
                                 手机商城APP
                             </div>
                         </li>
                         <li><a href="#">智能生活</a></li>
                         <li><a href="#">Melect Nocation</a></li>
                     </ul>
-                </nav> <!--html5 tag-->
+                </nav>
                 <div class="topbar-cart">
-                    <a href="" class="cart-mini">
+                    <a href="#">
                         <em class="iconfont icon-gouwuchekong"></em>
-                        购物车
-                        <span>(0)</span>
-                        <div class="cart-menu">
-                            购物车中还没有商品，赶紧选购吧!
-                        </div>
+                        购物车(0)
                     </a>
-                    
+                    <div class="cart-menu">
+                        购物车中还没有商品，赶紧选购吧！
+                    </div>
                 </div>
                 <div class="topbar-info">
-                    <a href="#">登录</a>
+                    <a href="#">登陆</a>
                     <a href="#">注册</a>
                     <a href="#">消息通知</a>
                 </div>
-               
             </div>
         </div>
-        <!-- end site-topbar -->
+        <!-- end sit-topbar end -->
 
         <!-- site-header start -->
         <div class="site-header">
-            <!-- container负责左右居中 -->
-            <div class="container">
+            <div class="container clearfix">
                 <div class="header-logo">
-                    <a href="#">
+                    <a href="">
                         <img src="./images/小米logo.png" alt="xiaomi" width="48" height="56">
                     </a>
                 </div>
                 <nav class="header-nav">
-                    <ul class="nav-list">
+                    <ul>
                         <li><a href="#">Minini手机</a></li>
                         <li><a href="#">Pidmi手机</a></li>
                         <li><a href="#">电视</a></li>
@@ -118,19 +117,134 @@
                         <li><a href="#">家电</a></li>
                         <li><a href="#">路由器</a></li>
                         <li><a href="#">服务中心</a></li>
-                        <li><a href="#">社区</a></li>
+                        <li><a href="#">笔记本</a></li>
                     </ul>
                 </nav>
                 <div class="header-search">
-                    <input type="text" class="search-text" placeholder="小米">
+                    <input type="text" class="search-text" placeholder="红米">
                     <a href="#" class="search-btn iconfont icon-fangdajing"></a>
                 </div>
-
             </div>
         </div>
         <!-- end site-header -->
 
     </header>
     <!-- end header -->
+
+    <!-- main start -->
+    <main class="page">
+        <section class="focus-slider container">
+            <div class="category">
+                <ul>
+                    <li>
+                        <a href="#">
+                            手机
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">111</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            电视
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">222</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            笔记本 平板
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">333</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            出行 穿戴
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">444</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            耳机 音箱
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">555</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            家电
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">666</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            智能 路由器
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">777</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            电源 配件
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">888</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            健康 儿童
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">999</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            生活 箱包
+                            <em class="iconfont icon-xiangyoujiantou"></em>
+                        </a>
+                        <div class="category-list">1010</div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="swiper swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(./images/banner-1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/banner-2.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/banner-3.png)"></div>
+                  </div>
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination swiper-pagination-white"></div>
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-next swiper-button-white"></div>
+                  <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+
+        </section>
+    </main>
+    <!-- end main -->
+
+    
+    <!-- swiper 官方类库 -->
+    <script src="./js/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+        loop: true, // 设置循环
+        spaceBetween: 30,
+        effect: 'fade',
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        });
+    </script>
 </body>
 </html>

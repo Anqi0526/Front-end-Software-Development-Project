@@ -1,294 +1,346 @@
-.header {
-    height: 140px;
-    /* background-color: pink; */
-}
-
-/* site-topbar start */
-.site-topbar{
+/* site-topbar start*/
+.site-topbar {
     height: 40px;
-    background: #333333;
+    background-color: #333;
     font-size: 12px;
-    line-height: 40px;
 }
 
 .site-topbar a {
-    color: #B0B0B0;
+    color: #b0b0b0;
+    display: inline-block;
+    height: 40px;
 }
 
-/* 一定要指定死 */
-.site-topbar .topbar-nav >ul >li {
-    float:left;
+.site-topbar a:hover{
+    color: #fff;
+}
+
+.topbar-nav >ul>li {
+    line-height: 40px;
+    float: left;
     margin-right: 15px;
-    
 }
 
-.site-topbar .topbar-nav >ul >li.submenu{
+.topbar-cart ,
+.topbar-info {
+    float: right;
+    line-height: 40px;
+}
+
+.topbar-info>a{
+    margin-right:13px;
+}
+
+.topbar-cart>a{
+    background-color: #424242;
+    height: 40px;
+    width: 120px;
+    /* padding:  0 24px; */
+    text-align: center;
+    overflow: hidden;
+}
+
+.topbar-cart >a:hover{
+    color: #ff6a00;
+    background-color: #fff;
+}
+
+.topbar-cart >a>em {
+    margin-right: 7px;
+}
+
+.topbar-nav .submenu{
     position: relative;
     padding-right: 14px;
+    z-index: 10;
 }
-
-/* 小箭头 array */
-.site-topbar .topbar-nav >ul >li.submenu::after {
+/* 箭头 */
+.topbar-nav .submenu::after{
     position:absolute;
-    top:50%;
     right:0;
+    /* 垂直居中 */
+    /* 往上移的过程可以用margin-top负值 也可以用transform:translate; */
+    top: 50%; 
     display: block;
     content: "";
     width: 5px;
     height: 5px;
-    border-right: 1px solid #B0B0B0;
-    border-bottom: 1px solid #B0B0B0;
-    /* 旋转45度 */
-    transform: translateY(-4px) rotate(45deg);
-    /* 箭头动画 */
-    transition:transform .3s ease 0s;
+    background-color: transparent;
+    border-right: 1px solid #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
+    /* 旋转箭头 */
+    transform:translateY(-4px) rotate(45deg);
+
+    /* 鼠标触碰 箭头旋转 */
+    transition: transform .3s ease 0s;
 }
 
-/* 鼠标触碰，箭头旋转,伪元素转起来 */
-.site-topbar .topbar-nav >ul >li.submenu:hover::after{
-    transform: translateY(0) rotate(225deg);
-    border-color: #fff;
+.topbar-nav .submenu:hover::after{
+    transform: translateY(0px) rotate(225deg);
+    border-color:#fff;
 }
 
-/* 实心三角形 Solid triangle */
-.site-topbar .topbar-nav >ul >li.active::before {
+/* 实心三角形 */
+.topbar-nav .active::before{
     position: absolute;
-    bottom:0;
-    left:50%;
-    margin-left: -3px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -6px;
+    display: none;
     content: "";
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-bottom-color: #fff;
-    display: none;
+    border-bottom-color:#fff ;
 }
 
-.site-topbar .topbar-nav >ul >li.active:hover::before{
+.topbar-nav .active:hover::before{
     display: block;
 }
 
-/* 云服务下拉列表 */
-.site-topbar .topbar-nav >ul >li.submenu .submenu-list {
+/* 下拉列表 */
+.submenu .submenu-list{
     position: absolute;
     top:40px;
-    left:50%;
+    left: 50%;
     margin-left: -52.5px;
+    height: 0px;
     width: 105px;
-    /* height: 150px; */
     background-color: #fff;
     box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.3);
-    /* 动画 */
-    height:0;
+    transition: height .3s;
     overflow: hidden;
-    transition: height 0.3s;
 }
-.site-topbar .topbar-nav >ul >li.submenu:hover .submenu-list{
+.submenu:hover .submenu-list{
     height: 150px;
 }
 
-/* 给下拉列表里面的小图标加margin */
-.site-topbar .topbar-nav .submenu-list>ul>li a img{
-    margin:0 3px 0 6px;
-    vertical-align: -4px;
-}
-
-.site-topbar .topbar-nav .submenu-list>ul>li{
+.submenu .submenu-list >ul >li {
     line-height: 30px;
+    height: 30px;
 }
 
-/* 下拉列表变色 */
-.site-topbar .topbar-nav .submenu-list>ul>li> a:hover{
-    color: #ff6700
+.submenu .submenu-list >ul >li:hover a{
+    color: #ff6a00;
 }
 
-/* QRcode */
-.site-topbar .topbar-nav>ul >li.submenu .appcode{
+.submenu .submenu-list>ul>li img{
+    margin: 0 4px 0 6px;
+    vertical-align: -3px;
+}
+
+/* app download */
+.submenu .appcode{
     position: absolute;
-    top:40px;
+    top: 40px;
     left:50%;
-    margin-left: -62px;
+    margin-left:-62px;
     width: 124px;
-    /* height: 148px; */
+    height: 0px;
     background-color: #fff;
     box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.3);
+    /* padding: 17px 18px 16px; */
     text-align: center;
+    line-height:1;
     font-size: 14px;
-    line-height: 1;
     color:#333;
-    /* 隐藏 */
-    height:0;
     overflow: hidden;
-    transition: height 0.3s;
+    transition: height .3s;
 }
-
-/* 鼠标触碰，显示二维码 */
-.site-topbar .topbar-nav>ul >li.submenu:hover .appcode{
+.submenu:hover .appcode{
     height: 148px;
 }
-
-.site-topbar .topbar-nav>ul >li.submenu .appcode>img {
+.submenu .appcode>img{
     display: block;
     margin: 17px auto 16px;
 }
 
-.site-topbar .topbar-info{
-    float: right;
-}
-
-.site-topbar .topbar-info>a {
-    margin-right: 13px;
-}
-
-.site-topbar .topbar-nav >ul >li a:hover,
-.site-topbar .topbar-info > a:hover {
-    color:#fff;
-}
-
-/* shopping-cart */
-.site-topbar .topbar-cart{
+/* 购物车菜单 */
+.topbar-cart{
     position: relative;
-    float:right;
-    
-}
-
-.site-topbar .topbar-cart .cart-mini {
-    /* 使得整个鼠标可以选择这个区域 */
-    display: block; 
-    padding: 0 24px;
-    background-color: #424242;
     height: 40px;
 }
-
-.site-topbar .topbar-cart .cart-mini em {
-    font-size: 16px;
-    vertical-align: -1px;
-}
-
-.site-topbar .topbar-cart .cart-mini:hover {
-    color:#FF8D40;
-    background-color: #fff;
-}
-
-/* 购物车菜单 */
-.site-topbar .topbar-cart .cart-menu {
+.topbar-cart .cart-menu{
     position: absolute;
-    top:40px;
-    right:0;
+    top: 40px;
+    right: 0;
     width: 316px;
-    /* height: 50px; */
+    height: 0px;
     background-color: #fff;
-    box-shadow: 0px 1px 7px 10px rgba(0,0,0,5%);
+    box-shadow: 0px 7px 10px 0px rgba(0,0,0,10%);
     text-align: center;
-    /* line-height: 100px; */
-    /* 也可以用padding来写 */
-    padding: 25px 0 25px;
-    /* 默认隐藏 */
-    height: 0;
-    padding: 0;
+    line-height: 100px;
     overflow: hidden;
-    transition: height 0.3s, padding 0.3s;
-    color: #333;
+    transition: height .3s;
     z-index: 10;
 }
-
-/* 鼠标滑动到购物车，显示菜单 */
-.site-topbar .topbar-cart:hover .cart-menu {
-    height: 50px;
-    padding: 25px 0 25px;
+.topbar-cart:hover .cart-menu{
+    height: 100px;
 }
-
 /* end site-topbar*/
 
-
-
 /* site-header start */
-/* header-logo */
-.site-header .header-logo{
+.site-header .header-logo {
     float: left;
     margin-top: 23px;
 }
-
-.site-header .header-logo>a:active img{
-    /* logo要缩小:0.9 */
+.site-header .header-logo a:active img {
     transform: scale(0.9);
 }
 
-/* header-nav */
 .site-header .header-nav {
     float: left;
+    margin-left: 194px;
 }
 
-.site-header .header-nav .nav-list{
-    margin-left:194px;
-}
-
-.site-header .header-nav .nav-list>li{
+.site-header .header-nav >ul >li {
     float: left;
-    padding:38px 10px;
+    padding: 42px 10px;
 }
 
-.site-header .header-nav .nav-list>li>a{
-    font-size: 16px;
-    color: #333;
+.site-header .header-nav >ul >li a{
+    color:#333;
+    font-size:16px;
 }
 
-/* header-search */
 .site-header .header-search{
     float: right;
-    /* background-color: orange; */
     width: 297px;
+    background-color: gold;
     margin-top: 25px;
 }
 
 .site-header .header-search .search-text{
-    float: left;
     width: 245px;
     height: 50px;
     border: 1px solid #e0e0e0;
     border-right: none;
     font-size: 14px;
     color:#333;
-    /* 设置内置文字的上下水平距离盒子的距离 */
     line-height: 50px;
-    padding: 0 0 0 11px;
+    padding:0 11px;
     box-sizing: border-box;
-    
-
-}
-
-.site-header .header-search .search-btn{
     float: left;
+}
+.site-header .header-search .search-btn{
     display: block;
-    width: 50px;
+    width: 52px;
     height: 50px;
     background-color: #fff;
     border: 1px solid #e0e0e0;
+    float:left;
     box-sizing: border-box;
-    font-size: 18px;
-    text-align: center;
     line-height: 50px;
+    text-align: center;
 }
 
 .site-header .header-search .search-btn:hover{
-    background-color: #ff6a00;
+    background-color:#ff6a00;
     color:#fff;
-    border-color: #ff6a00;
+    border-color:#ff6a00 ;
 }
 
-/* 当鼠标触碰到整体的边框颜色变化 */
+/* 当鼠标触碰，整体边框颜色变化 */
 .site-header .header-search:hover .search-text,
 .site-header .header-search:hover .search-btn{
-    border-color: #9d9999; 
+    border-color: #b0b0b0;
 }
 
-/* 点击鼠标获取焦点时，边框样式停留 */
+/* 当鼠标点击获取焦点时，边框样式停留 */
 .site-header .header-search .search-text:focus,
-.site-header .header-search .search-text:focus + .search-btn{
-    border-color: #ff6a00; 
+.site-header .header-search .search-text:focus+.search-btn {
+    border-color: #ff6a00;
+}
+/* end site-header */
+
+/* focus-slider start */
+
+/* 只有上面的部分清除浮动，下面才能和上面区分 */
+.focus-slider{
+    position: relative;
 }
 
+/* 分类导航 */
+.focus-slider .category{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 234px;
+    height: 460px;
+    background-color: rgba(105,101,101,0.6);
+    padding-top: 19px;
+    box-sizing: border-box;
+    z-index: 2;
+}
 
+.focus-slider .category>ul>li{
+    line-height: 42px;
+}
 
+.category >ul>li>a{
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 23px 0 30px;
+}
 
-/* end site-header */
+.category >ul>li>a>em{
+    float: right;
+}
+
+.category >ul>li>a:hover{
+    background-color: #ff6a00;
+}
+
+.category .category-list {
+    position: absolute;
+    top:0;
+    left: 234px;
+    background-color: skyblue;
+    width: 992px;
+    height: 460px;
+    display: none;
+}
+
+.category >ul>li:hover .category-list{
+    display: block;
+}
+
+.focus-slider .swiper{
+    width: 1226px;
+    height: 460px;
+    background-color: gold;
+}
+
+/* 覆盖swiper的向前箭头 */
+.swiper-button-prev{
+    left: 244px;
+    width: 17px;
+    height: 31px;
+}
+.swiper-button-next{
+    width: 17px;
+    height: 31px;
+}
+
+.swiper-pagination {
+    text-align: right;
+    padding-right:34px;
+    bottom: 11.5px;
+    box-sizing: border-box;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #4d4d4d;
+    border-radius: 50%;
+}
+.swiper-pagination-bullet-active{
+    width: 10px;
+    height: 10px;
+    background-color: #666;
+    border: 2px solid #4d4d4d;
+    border-radius: 50%;
+}
+/* end focus-slider */
