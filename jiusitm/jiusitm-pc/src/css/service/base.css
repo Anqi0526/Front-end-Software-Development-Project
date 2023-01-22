@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "PingFangSCRegular";
+    src: url(../fonts/PingFang\ SC\ Regular.ttf) format("truetype");
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body {
+    /* height:6000px; */
+    font: 14px/1.5 PingFang SC, Microsoft YaHei;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+/* 清除浮动的基础 */
+.clearfix::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+/* 升级为块级元素 */
+.db{
+    display: block;
+}
+
+/* 升级为inline-block */
+.dib {
+    display:inline-block;
+}
+
+/* text-align-center */
+.tac{
+    text-align: center;
+}
